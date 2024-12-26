@@ -5,7 +5,6 @@ interface DocumentsLayoutProps {
 const DocumentsLayout = ({ children }: DocumentsLayoutProps) => {
   return (
     <div>
-      <nav className="w-full bg-red-500">Document navbar</nav>
       {children}
     </div>
   );
