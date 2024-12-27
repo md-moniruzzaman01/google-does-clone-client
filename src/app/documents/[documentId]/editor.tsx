@@ -6,6 +6,8 @@ import TaskItem from "@tiptap/extension-task-item";
 import TaskList from "@tiptap/extension-task-list";
 //underline
 import Underline from "@tiptap/extension-underline";
+//link
+import Link from "@tiptap/extension-link";
 
 //table
 import Table from "@tiptap/extension-table";
@@ -19,6 +21,8 @@ import ImageResize from "tiptap-extension-resize-image";
 // font
 import FontFamily from "@tiptap/extension-font-family";
 import TextStyle from "@tiptap/extension-text-style";
+import {Color} from "@tiptap/extension-color";
+import Highlight from "@tiptap/extension-highlight";
 
 // internal
 import { useEditorStore } from "@/store/use-editor-store";
@@ -60,6 +64,15 @@ export const Editor = () => {
     },
     extensions: [
       StarterKit,
+      Color,
+      Highlight.configure({
+        multicolor:true
+      }),
+      Link.configure({
+        openOnClick:false,
+        autolink:true,
+        defaultProtocol:"https"
+      }),
       FontFamily,
       TextStyle,
       Underline,
